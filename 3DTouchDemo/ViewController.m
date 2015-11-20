@@ -54,10 +54,6 @@
     NSLog(@"Count: %ld", _count);
     NSLog(@"%@", self.presentedViewController);
     
-
-    
-   
-    
     if (CGRectContainsPoint(_tableView.frame, location)) {
         if ([self.presentedViewController isKindOfClass:[DisplayViewController class]]) {
             return nil;
@@ -67,24 +63,23 @@
             NSLog(@"%@", indexPath);
             DisplayViewController *displayVC = [[DisplayViewController alloc] init];
             displayVC.title = [_tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-            
             displayVC.view.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 256.0
                                                              green:arc4random() % 256 / 256.0
                                                               blue:arc4random() % 256 / 256.0
                                                              alpha:1.0];
             
+            // peek预览窗口大小
             displayVC.preferredContentSize = CGSizeMake(0.0, 100 * indexPath.row);
             
+            // 进入peek前不被虚化的rect
             previewingContext.sourceRect = [self.view convertRect:[_tableView cellForRowAtIndexPath:indexPath].frame fromView:_tableView];
             
             return displayVC;
         }
-        
     }
     
     
     if ([self.presentedViewController isKindOfClass:[MyViewController class]]) {
-        
         return nil;
     } else {
         if (CGRectContainsPoint(_label.frame, location)) {

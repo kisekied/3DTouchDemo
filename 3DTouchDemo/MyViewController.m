@@ -62,24 +62,22 @@
     UIPreviewAction *action1 = [UIPreviewAction actionWithTitle:@"Default" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         
     }];
-    
     UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"Selected" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         
     }];
-    
     UIPreviewAction *action3 = [UIPreviewAction actionWithTitle:@"Destructive" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         
     }];
-    
     NSArray *actions = @[action1, action2, action3];
+    
     UIPreviewActionGroup *group = [UIPreviewActionGroup actionGroupWithTitle:@"Actions Group" style:UIPreviewActionStyleDefault actions:actions];
     
     UIPreviewAction *action4 = [UIPreviewAction actionWithTitle:@"Single Action" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         
     }];
-//
+
     NSArray *array = @[group, action4];
-//    NSArray *array = @[action1];
+
     return array;
 }
 
