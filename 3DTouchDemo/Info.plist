@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Plist Add</string>
+			<string>静态添加</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>info.plist</string>
+			<string>FromPlist</string>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

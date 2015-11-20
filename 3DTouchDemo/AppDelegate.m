@@ -23,10 +23,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"one" localizedTitle:@"Title One" localizedSubtitle:@"Sub one" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePlay] userInfo:nil];
     
-    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"one" localizedTitle:@"Title One" localizedSubtitle:@"" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePlay] userInfo:nil];
-    
-    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"two" localizedTitle:@"Title Two" localizedSubtitle:@"" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeHome] userInfo:nil];
+    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"two" localizedTitle:@"Title Two" localizedSubtitle:@"Sub two" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeHome] userInfo:nil];
     
     
     [UIApplication sharedApplication].shortcutItems = @[item1, item2];
@@ -36,8 +36,6 @@
 
 #pragma mark 选择shortcutItem
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    
-    
     
     if ([shortcutItem.type isEqualToString:@"one"]) {
         NSLog(@"Choose One");
